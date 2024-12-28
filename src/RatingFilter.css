@@ -1,0 +1,88 @@
+/* Style for the filter container */
+.filter-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  /* Style for the rating buttons container */
+  .rating-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for individual rating buttons */
+  .rating-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .rating-button:hover {
+    background-color: darkred;
+  }
+  
+  /* Style for the active button */
+  .rating-button.active {
+    background-color: black;
+  }
+  
+  .rating-button.active:hover {
+    background-color: darkred;
+  }
+  
+  /* Message displayed when a rating filter is applied */
+  .filter-message {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  /* Style for the movies grid */
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Style for individual movie cards */
+  .movie-card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-info {
+    padding: 15px;
+  }
+  
+  .movie-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .movie-info p {
+    margin: 5px 0;
+  }
+  
+  .movie-links a {
+    color: blue;
+    text-decoration: none;
+  }
+  
+  .movie-links a:hover {
+    text-decoration: underline;
+  }
+  

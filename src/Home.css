@@ -1,0 +1,106 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: white;
+  padding: 0 20px;
+}
+
+.video-overlay {
+  text-align: center;
+  margin-top: 50px; /* Space between welcome section and search bar */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.welcome-text {
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+  animation: fadeInText 1s ease-in-out;
+}
+
+.welcome-description {
+  font-size: 1.5em;
+  animation: fadeInText 1.5s ease-in-out;
+}
+
+.search-container {
+  margin-top: 20px;
+  animation: fadeInSearch 2s ease-in-out;
+}
+
+.search-bar {
+  padding: 12px;
+  font-size: 1.2em;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.home-container {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.movie-info {
+  padding: 10px;
+  text-align: left;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSearch {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

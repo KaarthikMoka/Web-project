@@ -1,0 +1,203 @@
+/* Overall container styling */
+.filter-container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: #222;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation for the container */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Title styling */
+.filter-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #FFD700;
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Slide-down animation for the title */
+@keyframes slideDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Genre buttons styling */
+.genre-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.genre-item {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: popIn 0.7s ease-in-out forwards;
+}
+
+/* Pop-in animation for buttons */
+@keyframes popIn {
+  0% {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+.genre-item:hover {
+  background-color: #c0392b;
+  transform: scale(1.2) rotate(3deg); /* Adds slight rotation for a dynamic feel */
+}
+
+/* Movies grid */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Individual movie card */
+.movie-card {
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: cardEnter 0.8s ease-in-out;
+}
+
+/* Card enter animation */
+@keyframes cardEnter {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Hover effect for movie card */
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Movie poster styling */
+.movie-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom-in effect on hover */
+.movie-card:hover .movie-image {
+  transform: scale(1.05);
+}
+
+/* Movie content (poster, title, and trailer) */
+.movie-content {
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+/* Movie title */
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out 0.2s forwards; /* Delayed fade-in */
+}
+
+/* Movie trailer link */
+.movie-trailer {
+  display: block;
+  margin-top: 10px;
+  color: #e74c3c;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-trailer:hover {
+  color: #c0392b;
+  transform: translateY(-5px); /* Small bounce on hover */
+}
+
+/* Movie info (visible on hover) */
+.movie-info {
+  display: none;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 2;
+}
+
+/* Show the movie info when the card is hovered */
+.movie-card:hover .movie-info {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Add keyframes for movie-info appearance */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

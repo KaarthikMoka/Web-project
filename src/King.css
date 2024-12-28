@@ -1,0 +1,118 @@
+/* Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Movie Cards Container */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  background-color: #1e1e1e; /* Dark gray card */
+  position: relative;
+  overflow: hidden; /* Prevents overflow of details */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px); /* Lift effect */
+  box-shadow: 0 8px 12px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+/* Always Visible Movie Title and Poster */
+.movie-card .movie-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.movie-card .movie-poster {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* Movie Info: Hidden by Default, Shows on Hover */
+.movie-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Transparent black overlay */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Prevents interaction before hover */
+}
+
+.movie-card:hover .movie-info {
+  opacity: 1;
+  pointer-events: auto; /* Enable interaction on hover */
+}
+
+/* Movie Info Styling */
+.movie-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.movie-info a {
+  color: #ff3d3d; /* Red color for links */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Link Hover Effect */
+.movie-info a:hover {
+  color: #fff; /* White color on hover */
+}
+
+/* Default Movie Link Styling when no specific link */
+.movie-info .default-link {
+  color: #ff3d3d; /* Red color for movie link */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .movie-card .movie-info p {
+    font-size: 0.9rem;
+  }
+
+  .movie-card .movie-info a {
+    font-size: 1rem;
+  }
+}
